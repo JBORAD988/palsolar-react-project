@@ -31,6 +31,19 @@
     line-height: 1.6;
     margin-bottom: 20px;
     font-size: 0.9rem;
+    position: relative;
+    display: inline-block;
+
+    &::after {
+        content: '';
+        display: block;
+        width: 100%; /* Matches the width of the text content */
+        height: 3px;
+        background: #FBBF24;
+        margin: 15px 0 0 0; /* Adjust margin to space the line */
+      }
+
+
   }
   
   .social-links {
