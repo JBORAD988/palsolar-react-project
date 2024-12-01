@@ -11,31 +11,24 @@ const Home = () => {
     const typedRef = useRef(null);
   
     useEffect(() => {
-        const typed = new Typed(typedRef.current, {
-            strings: [
-              "Solar Plant Operation & Maintenance",
-              "Solar Module Cleaning",
-              "Manpower Supply",
-              "Inverter Servicing & Repairing",
-              "Wind Turbine PCC",
-              "Steel Binding",
-              "Casting & Shuttering",
-              "Wind Turbine 33 KV & 66 KV Line Work",
-              "Solar Plant Installation & Commissioning"
-            ],
-            typeSpeed: 40,        
-            backSpeed: 30,         
-            loop: true,
-            showCursor: true,
-            cursorChar: '|',
-            startDelay: 300,       
-            backDelay: 1500,       
-            smartBackspace: true,  
-            fadeOut: true,         
-            fadeOutClass: 'typed-fade-out',
-            fadeOutDelay: 500,   
-            autoInsertCss: true,   
-          });
+      const typed = new Typed(typedRef.current, {
+        strings: [
+          "Solar Plant Operation & Maintenance",
+          "Solar Module Cleaning",
+          "Manpower Supply",
+          "Inverter Servicing & Repairing",
+          "Wind Turbine PCC",
+          "Steel Binding",
+          "Casting & Shuttering",
+          "Wind Turbine 33 KV & 66 KV Line Work",
+          "Solar Plant Installation & Commissioning"
+        ],
+        typeSpeed: 90,
+        backSpeed: 50,
+        loop: true,
+        showCursor: true,
+        cursorChar: '|',
+      });
   
       return () => {
         typed.destroy();

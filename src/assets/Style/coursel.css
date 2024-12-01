@@ -104,7 +104,22 @@
     color: white;
     margin-bottom: 1rem;
     font-family: serif;
+
+    &::after {
+        content: '';
+        display: block;
+        width: 135px;
+        height: 3px;
+        background: #FBBF24;
+        margin: 15px 0 0 0;
+      }
+  
+
+
   }
+
+
+ 
   
   .typing-wrapper {
     min-height: 60px;
