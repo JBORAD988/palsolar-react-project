@@ -1,56 +1,91 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../assets/Style/navbar.css"
 import logo from "../assets/images/new_logo.jpg";
 
 const Header = () => {
-  // const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
+
+  // Prevent scrolling when menu is open
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [menuOpen]);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
+  // Close menu when clicking outside
+  const handleOutsideClick = (e) => {
+    if (menuOpen && !e.target.closest('.nav_items_container') && !e.target.closest('.hamburger')) {
+      setMenuOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleOutsideClick);
+    return () => {
+      document.removeEventListener('mousedown', handleOutsideClick);
+    };
+  }, [menuOpen]);
+
+  const navItems = [
+    { name: 'Home', path: '/' },
+    { name: 'About Us', path: '/about-us' },
+    { name: 'Product', path: '/products' },
+    { name: 'Gallery', path: '/gallery' },
+    { name: 'Contact', path: '/contact-us' }
+  ];
+
+  const handleNavigation = (path) => {
+    window.location.href = path;
+    setMenuOpen(false);
+  };
+
   return (
-    <div className="d-flex justify-content-between align-items-center nav_main">
-      <div className="logo_main cursor-pointer" 
-      // onClick={() => navigate("/")}
-      >
-        <img src={logo} alt="logo" />
-      </div>
-      {/* //${menuOpen ? "open" : ""} */}
-      <div className={`nav_items_container `}> 
-        <div className="nav_items d-flex justify-content-center">
-          <div className="item" style={{fontSize:"large"}} 
-          // onClick={() => navigate("/")}
-          >
-            Home
-          </div>
-          <div className="item" style={{fontSize:"large"}}
-          // onClick={() => navigate("/about-us")}
-          >
-            About Us
-          </div>
-          <div className="item" style={{fontSize:"large"}} 
-          // onClick={() => navigate("/products")}
-          >
-            Product
-          </div>
-          <div className="item" style={{fontSize:"large"}} 
-          // onClick={() => navigate("/gallery")}
-          >
-            Gallery
-          </div>
-          <div className="item" style={{fontSize:"large"}} 
-          // onClick={() => navigate("/contact-us")}
-          >
-            Contact
+    <>
+      <div className="nav_main">
+        <div className="logo_main">
+          <img src={logo} alt="logo" />
+        </div>
+        
+        <div className={`nav_items_container ${menuOpen ? "open" : ""}`}> 
+          <div className="nav_items">
+            {navItems.map((item) => (
+              <div 
+                key={item.name}
+                className="item"
+                onClick={() => handleNavigation(item.path)}
+              >
+                {item.name}
+              </div>
+            ))}
           </div>
         </div>
+        
+        <button 
+          className={`hamburger ${menuOpen ? "open" : ""}`}
+          onClick={toggleMenu}
+          aria-label="Menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
-      {/* <div className="menu_icon" onClick={toggleMenu}>
-        <img src={menuOpen ? closeIcon : menuIcon} alt="menu icon" />
-      </div> */}
-    </div>
+
+      {/* Overlay for mobile menu */}
+      <div 
+        className={`overlay ${menuOpen ? "active" : ""}`}
+        onClick={() => setMenuOpen(false)}
+      />
+    </>
   );
 };
 

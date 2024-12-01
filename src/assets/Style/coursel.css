@@ -1,27 +1,200 @@
+/* coursel.css */
 
-.carousel {
-    width: 100%;
-    height: 100vh;  
-}
-
-/* Style for each carousel image */
-.carousel-image img {
-    width: 100%;  
-    height: 100%; 
-    object-fit: cover; 
-    filter: blur(3px); 
-    transition: filter 0.3s ease-in-out; 
-}
-
-.carousel-slogan {
+.home-container {
+    min-height: 100vh;
+    position: relative;
+    background: linear-gradient(to right, #000000, #1a1a1a);
+    overflow: hidden;
+    margin-top: -63px;
+  }
+  
+  .content-row {
+    display: flex;
+    min-height: 100vh;
+    position: relative;
+  }
+  
+  /* Carousel Column - Full width with absolute positioning */
+  .carousel-column {
     position: absolute;
-    top: 50%;  /* Vertically center */
-    left: 50%; /* Horizontally center */
-    transform: translate(-50%, -50%); /* Fine-tuning centering */
-    color: white;  /* White text for better visibility */
-    font-size: 2rem;  /* Large text size */
-    font-weight: bold;  /* Make the text bold */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Adding a subtle shadow to text for better visibility */
-    text-align: center; /* Center align the text */
-    max-width: 90%;  /* Limit text width */
-}
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    
+  }
+  
+  .carousel-wrapper {
+    height: 100%;
+  }
+  
+  .carousel-slide {
+    height: 100vh;
+   
+  }
+  
+  .carousel-image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  /* Content Column - Positioned on top of carousel */
+  .content-column {
+    position: relative;
+    width: 50%;
+    margin-top: 5%;
+    margin-left: auto;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    z-index: 2;
+  }
+  
+  .content-glass-panel {
+    width: 100%;
+    padding: 3rem;
+    background: rgba(215, 215, 215, 0.35);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+  }
+  
+  .content-wrapper {
+    max-width: 600px;
+  }
+  
+  .main-title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: rgb(5, 5, 5);
+    font-family: serif;
+    margin-bottom: 1rem;
+  }
+  
+  .title-underline {
+    height: 3px;
+    width: 100px;
+    background: #FBBF24;
+    margin-bottom: 1.5rem;
+  }
+  
+  .subtitle {
+    font-size: 1.25rem;
+    color: rgba(63, 63, 63, 0.9);
+    margin-bottom: 2rem;
+    font-weight: 300;
+  }
+  
+  /* Services Section */
+  .services-container {
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  .services-title {
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 1rem;
+    font-family: serif;
+  }
+  
+  .typing-wrapper {
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .typing-text {
+    color: #FBBF24;
+    font-size: 1.25rem;
+    font-weight: 300;
+  }
+  
+  /* Branding Section */
+  .branding-section {
+    margin-top: 2rem;
+  }
+  
+  .company-tagline {
+    color: rgba(39, 39, 39, 0.8);
+    font-size: 0.875rem;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+  }
+  
+  .company-name {
+    margin-top: 0.5rem;
+  }
+  
+  .plus-text {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #FBBF24;
+    font-family: serif;
+  }
+  
+  .solar-text {
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: white;
+    margin-left: 0.5rem;
+    font-family: serif;
+  }
+  
+  /* Typed.js cursor */
+  .typed-cursor {
+    color: #FBBF24;
+    font-size: 1.25rem;
+  }
+  
+  /* Hide carousel controls */
+  .carousel .control-dots,
+  .carousel .control-prev,
+  .carousel .control-next {
+    display: none;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .content-row {
+      flex-direction: column;
+    }
+  
+    .carousel-column {
+      position: absolute;
+      height: 100vh;
+      
+    }
+  
+    .content-column {
+      width: 100%;
+      padding: 1rem;
+      margin-top: 10%;
+     
+    }
+  
+    .content-glass-panel {
+      padding: 1.5rem;
+    }
+  
+    .main-title {
+      font-size: 2.5rem;
+    }
+  
+    .services-container {
+      padding: 1rem;
+    }
+  
+    .typing-text {
+      font-size: 1rem;
+    }
+  }
