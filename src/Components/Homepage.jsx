@@ -37,9 +37,7 @@ const Home = () => {
   
     return (
       <div className="home-container">
-        {/* Main row container */}
         <div className="content-row">
-          {/* Left Column - Content */}
           <div className="carousel-column">
             <Carousel
               autoPlay
@@ -76,7 +74,6 @@ const Home = () => {
           </div>
          
   
-          {/* Right Column - Carousel */}
           <div className="content-column">
             <div className="content-glass-panel">
               <div className="content-wrapper">
@@ -88,7 +85,6 @@ const Home = () => {
                   Sustainable Energy Solutions for a Brighter Future
                 </p>
   
-                {/* Services Section */}
                 <div className="services-container">
                   <h2 className="services-title">
                     Our Services
@@ -101,7 +97,6 @@ const Home = () => {
                   </div>
                 </div>
   
-                {/* Company Branding */}
                 <div className="branding-section">
                   <h6 className="company-tagline">
                     TRANSFORMING ENERGY • EMPOWERING FUTURES

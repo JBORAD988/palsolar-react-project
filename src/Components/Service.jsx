@@ -16,7 +16,6 @@ function service() {
         <h2>Our Services</h2>
         <p>We offer a wide range of services to support your solar and wind turbine needs. Here's an overview of the projects we've successfully completed:</p>
         
-        {/* Card Container */}
         <div className="service-cards">
             <div className="service-card">
                 <img src={Card1} />

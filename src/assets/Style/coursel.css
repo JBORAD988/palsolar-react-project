@@ -1,4 +1,3 @@
-/* coursel.css */
 
 .home-container {
     min-height: 100vh;
@@ -14,7 +13,6 @@
     position: relative;
   }
   
-  /* Carousel Column - Full width with absolute positioning */
   .carousel-column {
     position: absolute;
     left: 0;
@@ -40,7 +38,6 @@
     object-fit: cover;
   }
   
-  /* Content Column - Positioned on top of carousel */
   .content-column {
     position: relative;
     width: 50%;
@@ -90,7 +87,6 @@
     font-weight: 300;
   }
   
-  /* Services Section */
   .services-container {
     padding: 1.5rem;
     background: rgba(0, 0, 0, 0.5);
@@ -133,7 +129,6 @@
     font-weight: 300;
   }
   
-  /* Branding Section */
   .branding-section {
     margin-top: 2rem;
   }
@@ -165,20 +160,17 @@
     font-family: serif;
   }
   
-  /* Typed.js cursor */
   .typed-cursor {
     color: #FBBF24;
     font-size: 1.25rem;
   }
   
-  /* Hide carousel controls */
   .carousel .control-dots,
   .carousel .control-prev,
   .carousel .control-next {
     display: none;
   }
   
-  /* Responsive Design */
   @media (max-width: 768px) {
     .content-row {
       flex-direction: column;
