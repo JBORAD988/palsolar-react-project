@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "../assets/Style/navbar.css"
 import logo from "../assets/images/mainlogo1.png";
+import {useNavigate} from "react-router-dom";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate =  useNavigate();
 
   // Prevent scrolling when menu is open
   useEffect(() => {
@@ -38,20 +40,20 @@ const Header = () => {
   const navItems = [
     { name: 'Home', path: '/' },
     { name: 'About Us', path: '/about-us' },
-    { name: 'Product', path: '/products' },
-    { name: 'Gallery', path: '/gallery' },
+    { name: 'Services', path: '/services' },
+    { name: 'Our Clients', path: '/our-clients' },
     { name: 'Contact', path: '/contact-us' }
   ];
 
   const handleNavigation = (path) => {
-    window.location.href = path;
+    navigate(path)
     setMenuOpen(false);
   };
 
   return (
     <>
       <div className="nav_main">
-        <div className="logo_main">
+        <div className="logo_main"> 
           <img src={logo} alt="logo" />
         </div>
         
